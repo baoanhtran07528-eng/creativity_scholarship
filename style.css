@@ -220,6 +220,7 @@ canvas, a, button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    --menu-size: clamp(560px, calc(100vmin - 120px), 1280px);
     width: 0px;  
     height: 0px;
     pointer-events: none;
@@ -235,17 +236,17 @@ canvas, a, button {
 }
 
 #heartMenu.active-menu {
-    width: 1200px;  
-    height: 1200px; 
+    width: var(--menu-size);
+    height: var(--menu-size);
     pointer-events: auto;
 }
 
 .menu-item {
     fill: #ffffff; 
     font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 20px; 
+    font-size: clamp(20px, 2.2vmin, 24px);
     font-weight: 900;
-    letter-spacing: 4px;
+    letter-spacing: clamp(3px, 0.55vmin, 5px);
     text-transform: uppercase;
     text-anchor: middle;
     dominant-baseline: central;
